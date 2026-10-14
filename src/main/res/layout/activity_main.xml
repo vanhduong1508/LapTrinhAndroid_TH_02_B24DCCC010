@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#F8F9FA">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Card Tổng tiền -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTongTien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="#1D4ED8"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng số tiền đã chi"
+                    android:textColor="#DBEAFE"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvTongTien"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="200.000 đ"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tiêu đề Danh sách khoản chi -->
+        <TextView
+            android:id="@+id/tvTieuDeDanhSach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardTongTien"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Danh sách khoản chi"
+            android:textColor="#4B5563"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Nút Thêm khoản chi ở dưới cùng -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnThemKhoanChi"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_button_green"
+            android:text="+ Thêm khoản chi"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Ghi chú phía trên nút Thêm khoản chi -->
+        <TextView
+            android:id="@+id/tvHuongDan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btnThemKhoanChi"
+            android:layout_marginVertical="8dp"
+            android:gravity="center"
+            android:text="(nhấn vào một khoản chi để xem chi tiết)"
+            android:textColor="#9CA3AF"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvKhoanChi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tvHuongDan"
+            android:layout_below="@id/tvTieuDeDanhSach"
+            android:clipToPadding="false" />
+
+    </RelativeLayout>
+</FrameLayout>
